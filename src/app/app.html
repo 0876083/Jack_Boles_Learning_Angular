@@ -1,2 +1,12 @@
-<h1>My first angular program!</h1>
-<p>Hi my name is {{firstName}} {{lastName}}.</p>
+<div class="container">
+  <h1>Record Store</h1>
+
+  <div *ngFor=" let record of records" class="record-card">
+
+      <h3>{{ record.title }}</h3>
+      <p><strong>Artist:</strong> {{ record.artist }}</p>
+      <p><strong>Genre:</strong> {{ record.genre }}</p>
+      <p><strong>Price:</strong> ${{ record.price }}</p>
+      <p *ngIf="record.releaseYear"><strong>Released:</strong> {{ record.releaseYear }}</p>
+    </div>
+</div>
