@@ -1,15 +1,15 @@
 import {Component, signal} from '@angular/core';
 import {RouterOutlet} from '@angular/router';
 import {Record} from "./Shared/models/record";
-import {JsonPipe, ngFor, ngIf} from "@angular/common";
+import {NgFor, NgIf} from "@angular/common";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [ngFor, ngIf, JsonPipe],
+  imports: [RouterOutlet, NgFor, NgIf],
   templateUrl: './app.html',
-  styleUrl: './app.scss'
-})
+  styleUrl: './app.scss'})
+
 export class App {
   title = 'Record Store';
 
