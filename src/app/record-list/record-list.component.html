@@ -1,8 +1,11 @@
 <div class="container">
   <h2>Record List</h2>
 
-  <app-record-list-item [content]="records[0]"></app-record-list-item>
-  <app-record-list-item [content]="records[1]"></app-record-list-item>
-  <app-record-list-item [content]="records[2]"></app-record-list-item>
-  <app-record-list-item [content]="records[3]"></app-record-list-item>
+  @for (record of records; track i; let i = $index) {
+    <app-record-list-item
+      [content]="record"
+      [class.even]="i % 2 === 0"
+      [class.odd]="i % 2 !== 0">
+    </app-record-list-item>
+  }
 </div>
