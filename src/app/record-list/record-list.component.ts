@@ -12,14 +12,23 @@ import {RecordStoreService} from "../services/record-store.service";
   styleUrl: './record-list.component.scss'
 })
 export class RecordListComponent implements OnInit {
-recordList: Record[] = [];
-constructor(private recordService: RecordStoreService) {}
+  recordList: Record[] = [];
+
+  constructor(private recordService: RecordStoreService) {
+  }
 
   ngOnInit(): void {
-  this.recordService.getRecords().subscribe({
-    next: (data: Record[]) => this.recordList = data,
-    error:err => console.error("Error fetching Records", err),
-    complete:() => console.log("Record data fetch complete!"),
-  })
+    this.recordService.getRecords().subscribe({
+      next: (data: Record[]) => this.recordList = data,
+      error: err => console.error("Error fetching Records", err),
+      complete: () => console.log("Record data fetch complete!"),
+    })
+  }
+
+  //Catch the onclick event from the html
+  selectedRecord?: Record;
+  //function to set which record to display
+  selectRecord(record: Record): void {
+    this.selectedRecord = record;
   }
 }

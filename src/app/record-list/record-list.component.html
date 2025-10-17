@@ -1,11 +1,6 @@
 <div class="container">
   <h2>Record List</h2>
-
-  @for (record of records; track i; let i = $index) {
-    <app-record-list-item
-      [content]="record"
-      [class.even]="i % 2 === 0"
-      [class.odd]="i % 2 !== 0">
-    </app-record-list-item>
-  }
+  <div *ngFor="let record of recordList" (click)="selectRecord(record)">
+    <app-record-list-item [content]="record"></app-record-list-item>
+  </div>
 </div>

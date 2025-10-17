@@ -1,12 +1,12 @@
-<div class="container">
+<div class="nav-bar">
+  <nav>
+    <a routerLink="/records" routerLinkActive="active">Record List</a>
+    <a routerLink="/modify-record" routerLinkActive="active">Modify Record</a>
+  </nav>
+</div>
+
+<div class = "app-container">
   <h1>{{title}}</h1>
-
-  <div *ngFor=" let record of records" class="record-card">
-
-      <h3>{{ record.title }}</h3>
-      <p><strong>Artist:</strong> {{ record.artist }}</p>
-      <p><strong>Genre:</strong> {{ record.genre }}</p>
-      <p><strong>Price:</strong> ${{ record.price }}</p>
-      <p *ngIf="record.releaseYear"><strong>Released:</strong> {{ record.releaseYear }}</p>
-    </div>
+  <app-record-list></app-record-list>
+  <router-outlet></router-outlet>
 </div>

@@ -1,1 +1,7 @@
-<p>record-list-item works!</p>
+<div *ngIf="content" class="record-list-item">
+  <h2>{{content.title}}</h2>
+  <p><strong>Artist:</strong> {{content.artist}}</p>
+  <p><strong>Genre:</strong> {{content.genre}}</p>
+  <p><strong>Price: </strong> {{content.price}}</p>
+  <p><strong>Release Year:</strong> {{content.releaseYear}}</p>
+</div>
