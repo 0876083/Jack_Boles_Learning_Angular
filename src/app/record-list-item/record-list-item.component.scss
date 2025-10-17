@@ -1,0 +1,12 @@
+.record-list-item {
+  border: 2px solid black;
+  padding: 10px;
+}
+
+:host.even {
+  background-color: pink;
+}
+
+:host.odd {
+  background-color: teal;
+}
